@@ -3,11 +3,6 @@ var template = ' \
 <html> \
 <head> \
 <meta http-equiv="content-type" content="text/html" charset="utf-8"/> \
-<meta name="apple-mobile-web-app-capable" content="no"> \
-<meta name="apple-mobile-web-app-title" content="H6nrys page"> \
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> \
-<link rel="apple-touch-icon-precomposed" href=""> \
-<link rel="apple-touch-startup-image" href=""> \
 <meta charset="utf-8"> \
 <link rel="shortcut icon" href=""> \
 <meta name="robots" content="index,follow"> \
@@ -21,13 +16,15 @@ var template = ' \
 </div> \
  \
 <div align="center" style="background-color:#FFFFFF;"> \
-<table><td><br> \
+<table><td> \
 ';
 
 var content = document.getElementById('content').innerHTML;
 
 var bottom = '\
-<panel><h3><a href="https://twitter.com/H6nry_/">Me on twitter: H6nry</a><br> \
-<a href="https://github.com/H6nry/">Me on Github: H6nryy</a></h3> \
+<panel><h3><a href="https://twitter.com/H6nry_/"><div> \
+<label>Developer's Twitter</label> \
+</div>Me on twitter: H6nry</a><br> \
+<a href="https://github.com/H6nry/">Me on Github: H6nry</a></h3> \
 ';
 document.write(template + content + bottom);
