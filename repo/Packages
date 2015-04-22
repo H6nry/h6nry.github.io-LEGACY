@@ -12,6 +12,7 @@ MD5sum: ced0d3a70d452b19db8d6860b14ddf39
 Description: BytaFont Tweak Mode for old iOS versions
 Name: BytaFontLegacyTM
 Author: H6nry <henry.anonym@gmail.com>
+Depiction: Files/bytafontlegacytm/index.html
 
 Package: org.h6nry.quickact
 Version: 0.0.1-1
@@ -26,6 +27,7 @@ MD5sum: 7ff0cb6c03f6aec3f1c28546cac3d7e5
 Description: An awesome MobileSubstrate tweak!
 Name: QuickAct
 Author: H6nry
+Depiction: Files/quickact/index.html
 
 Package: org.h6nry.swipeswitcher6
 Version: 0.0.1-87
@@ -40,4 +42,5 @@ MD5sum: 694352902cc4665ced2326e3afbc008d
 Description: An awesome MobileSubstrate tweak!
 Name: SwipeSwitcher6
 Author: System Administrator
+Depiction: Files/swipeswitcher6/index.html
 
