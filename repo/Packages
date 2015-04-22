@@ -1,0 +1,43 @@
+Package: org.h6nry.bytafontlegacytm
+Version: 0.0.1-127
+Section: Tweaks
+Maintainer: H6nry <henry.anonym@gmail.com>
+Depends: mobilesubstrate, preferenceloader
+Provides: com.bytafont.bytafonttm
+Architecture: iphoneos-arm
+Filename: Files/bytafontlegacytm/org.h6nry.bytafontlegacytm_0.0.1-127_iphoneos-arm.deb
+Size: 6040
+Installed-Size: 40
+MD5sum: ced0d3a70d452b19db8d6860b14ddf39
+Description: BytaFont Tweak Mode for old iOS versions
+Name: BytaFontLegacyTM
+Author: H6nry <henry.anonym@gmail.com>
+
+Package: org.h6nry.quickact
+Version: 0.0.1-1
+Section: Tweaks
+Maintainer: H6nry
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Filename: Files/quickact/org.h6nry.quickact_0.0.1-1_iphoneos-arm.deb
+Size: 2868
+Installed-Size: 16
+MD5sum: 7ff0cb6c03f6aec3f1c28546cac3d7e5
+Description: An awesome MobileSubstrate tweak!
+Name: QuickAct
+Author: H6nry
+
+Package: org.h6nry.swipeswitcher6
+Version: 0.0.1-87
+Section: Tweaks
+Maintainer: System Administrator
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Filename: Files/swipeswitcher6/org.h6nry.swipeswitcher6_0.0.1-87_iphoneos-arm.deb
+Size: 3088
+Installed-Size: 16
+MD5sum: 694352902cc4665ced2326e3afbc008d
+Description: An awesome MobileSubstrate tweak!
+Name: SwipeSwitcher6
+Author: System Administrator
+
