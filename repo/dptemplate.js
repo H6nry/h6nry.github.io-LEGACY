@@ -11,10 +11,10 @@ var template = ' \
 <meta charset="utf-8"> \
 <link rel="shortcut icon" href=""> \
 <meta name="robots" content="index,follow"> \
-<meta http-equiv="cache-control" content="Public|Private"> \
+<meta http-equiv="cache-control" content="no-cache"> \
 <title>H6nry\'s page</title> \
 </head> \
-<body text="#000000" bgcolor="#FFFFFF" link="#404040" alink="#404040" vlink="#404040"><br> \
+<body text="#000000" link="#404040" alink="#404040" vlink="#404040" style="background:none;"><br> \
  \
 <div align="center" style="background-color:#77ffff"> \
 <h1>H6nry\'s Repo</h1> \
