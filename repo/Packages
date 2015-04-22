@@ -15,6 +15,7 @@ Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/bytafontlegacytm/index.html
 Sponsor: Microsoft <http://www.microsoft.com/>
 
+
 Package: org.h6nry.quickact
 Version: 0.0.1-1
 Section: Tweaks
@@ -29,6 +30,7 @@ Description: An awesome MobileSubstrate tweak!
 Name: QuickAct
 Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/quickact/index.html
+
 
 Package: org.h6nry.swipeswitcher6
 Version: 0.0.1-87
