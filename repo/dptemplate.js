@@ -27,7 +27,7 @@ var template = ' \
 var content = document.getElementById('content').innerHTML;
 
 var bottom = '\
-<h3><a href="https://twitter.com/H6nry_/">Me on twitter: H6nry</a><br> \
+<panel><h3><a href="https://twitter.com/H6nry_/">Me on twitter: H6nry</a><br> \
 <a href="https://github.com/H6nry/">Me on Github: H6nry</a></h3> \
 ';
 document.write(template + content + bottom);
