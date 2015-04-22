@@ -1,0 +1,3 @@
+To make .gz and .bz2
+gzip -c9 Packages > Packages.gz
+bzip2 -c9 Packages > Packages.bz2
