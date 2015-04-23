@@ -24,7 +24,8 @@ var template = '\
 <div  style="position:absolute; left:10; width:175px; float:right; background-color:#77ffff"><br> \
 <a href="index.html">Home</a><br> \
 <a href="projects.html">Projects</a><br><br> \
-<a href="http://github.com/H6nry/">Github repo</a><br> \
+<a href="http://github.com/H6nry/">Github</a><br> \
+<a href="http://h6nry.github.io/repo/">Cydia repo</a><br> \
 </div> \
  \
 <div  style="position:absolute; right:10; width:175px; float:right; background-color:#77ffff"> \
