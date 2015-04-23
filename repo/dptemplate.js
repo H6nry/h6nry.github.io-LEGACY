@@ -6,7 +6,7 @@ var template = ' \
 <meta charset="utf-8"> \
 <link rel="shortcut icon" href=""> \
 <meta name="robots" content="index,follow"> \
-<meta http-equiv="cache-control" content="no-cache"> \
+<!--<meta http-equiv="cache-control" content="no-cache">--> \
 <title>H6nry\'s page</title> \
 </head> \
 <body text="#000000" link="#404040" alink="#404040" vlink="#404040" style="background:none;"><br> \
