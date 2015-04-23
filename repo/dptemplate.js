@@ -22,7 +22,7 @@ var template = ' \
 var content = document.getElementById('content').innerHTML;
 
 var bottom = '\
-<h3><a href="https://twitter.com/H6nry_/">Developers Twitter Me on twitter: H6nry</a><br> \
+<h3><a href="https://twitter.com/H6nry_/" onclick="javascript:window.open(\'https://twitter.com/H6nry_/\',\'_blank\');>Me on twitter: H6nry</a><br> \
 <a href="https://github.com/H6nry/">Me on Github: H6nry</a></h3> \
 ';
 document.write(template + content + bottom);
