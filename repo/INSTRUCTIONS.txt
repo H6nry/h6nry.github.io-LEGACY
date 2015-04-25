@@ -1,3 +1,6 @@
+To make Packages on iPhone do:
+./dpkg-scanpackages Files /dev/null > Packages
+
 To make .gz and .bz2:
 rm Packages.gz
 rm Packages.bz2

@@ -14,6 +14,21 @@ Name: BytaFontLegacyTM
 Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/bytafontlegacytm/index.html
 
+Package: org.h6nry.classiclockcydget
+Version: 3.1.5.0.4
+Priority: optional
+Section: Addons (Cydget)
+Maintainer: H6nry <henry.anonym@gmail.com>
+Depends: cydget, firmware (>= 7.0), curl
+Architecture: iphoneos-arm
+Filename: Files/classiclockcydget/CLC_3.1.5.0.4.deb
+Size: 16822
+Installed-Size: 73
+MD5sum: a298ba4d396ee70706e584b639c5df6a
+Description: iOS 6 style lockscreen on iOS 7
+Name: Classic Lock Cydget
+Author: H6nry <henry.anonym@gmail.com>
+Depiction: http://h6nry.github.io/repo/Files/classiclockcydget/index.html
 
 Package: org.h6nry.quickact
 Version: 0.0.1-1
@@ -29,7 +44,6 @@ Description: An awesome MobileSubstrate tweak!
 Name: QuickAct
 Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/quickact/index.html
-
 
 Package: org.h6nry.swipeswitcher6
 Version: 0.0.1-87
