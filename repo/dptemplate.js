@@ -9,7 +9,7 @@ var template = ' \
 <!--<meta http-equiv="cache-control" content="no-cache">--> \
 <title>H6nry\'s page</title> \
 </head> \
-<body text="#000000" link="#404040" alink="#404040" vlink="#404040" style="background:none;"><br> \
+<body text="#000000" link="#404040" alink="#404040" vlink="#404040" style="background:none;"> \
  \
 <div align="center" style="background-color:#77ffff"> \
 <h1>H6nry\'s Repo</h1> \
