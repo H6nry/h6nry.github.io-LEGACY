@@ -33,7 +33,4 @@ var template = '\
 <table><td align="left" style="text-align: justify;  font-size:110%;"><br> \
 ';
 var content = document.getElementById('content').innerHTML;
-//document.documentElement.innerHTML = '';
 document.documentElement.innerHTML = template+content;
-
-//document.write(template + content);
