@@ -18,10 +18,10 @@ var template = '\
 </div> \
  \
 <div style="position:absolute; left:10; width:175px; float:right; background-color:#77ffff;"><br> \
-<a href="index.html">Home</a><br><br> \
-<a href="projects.html">Projects</a><br><br> \
+<a href="./index.html">Home</a><br><br> \
+<a href="./projects.html">Projects</a><br><br> \
 <a href="http://h6nry.github.io/repo/">Cydia repo</a><br><br> \
-<a href="tutorial-cydia-repo.html">Tutorial: How to host your own Cydia repo</a><br><br> \
+<a href="./tutorial-cydia-repo.html">Tutorial: How to host your own Cydia repo</a><br><br> \
 <a href="http://github.com/H6nry/" target="_blank">Github</a><br><br> \
 </div> \
  \
