@@ -15,20 +15,32 @@ Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/bytafontlegacytm/index.html
 
 Package: org.h6nry.classiclockcydget
-Version: 3.1.5.0.4
+Version: 4.0
 Priority: optional
 Section: Addons (Cydget)
 Maintainer: H6nry <henry.anonym@gmail.com>
 Depends: cydget, firmware (>= 7.0), curl
 Architecture: iphoneos-arm
-Filename: Files/classiclockcydget/CLC_3.1.5.0.4.deb
-Size: 16822
-Installed-Size: 73
-MD5sum: a298ba4d396ee70706e584b639c5df6a
-Description: iOS 6 style lockscreen on iOS 7
+Filename: Files/classiclockcydget/CLC_4_final.deb
+Size: 13382
+MD5sum: 70042021b08e2d5753ded6726c8c7323
+Description: iOS 6 style lockscreen on iOS 7 and 8
 Name: Classic Lock Cydget
 Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/classiclockcydget/index.html
+
+Package: org.h6nry.classiclockextension
+Version: 2.4
+Depends: firmware (>= 7.0), org.h6nry.classiclockcydget
+Architecture: iphoneos-arm
+Filename: Files/classiclockextension/CLE_2-4_final.deb
+Size: 5020
+MD5sum: fc58e94083584c74fa61e5d285e69e11
+Description: Extensions for ClassicLock Cydget
+Name: ClassicLock Extension
+Author: H6nry <henry.anonym@gmail.com>
+Maintainer: H6nry <henry.anonym@gmail.com>
+Depiction: http://h6nry.github.io/repo/Files/classiclockextension/index.html
 
 Package: org.h6nry.quickact
 Version: 0.0.1-1
@@ -40,7 +52,7 @@ Filename: Files/quickact/org.h6nry.quickact_0.0.1-1_iphoneos-arm.deb
 Size: 2868
 Installed-Size: 16
 MD5sum: 7ff0cb6c03f6aec3f1c28546cac3d7e5
-Description: An awesome MobileSubstrate tweak!
+Description: Quickly toggle WiFi on iOS 6!
 Name: QuickAct
 Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/quickact/index.html
@@ -55,7 +67,7 @@ Filename: Files/swipeswitcher6/org.h6nry.swipeswitcher6_0.0.1-87_iphoneos-arm.de
 Size: 3088
 Installed-Size: 16
 MD5sum: 694352902cc4665ced2326e3afbc008d
-Description: An awesome MobileSubstrate tweak!
+Description: Swipe to switcher! (on iOS 6)
 Name: SwipeSwitcher6
 Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/swipeswitcher6/index.html
