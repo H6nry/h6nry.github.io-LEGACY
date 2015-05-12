@@ -13,34 +13,31 @@ var template = '\
 </head> \
 <body text="#000000" bgcolor="#FFFFFF" link="#404040" alink="#404040" vlink="#404040" style="font-family: sans-serif;"> \
 \
-<table style="width:100%"> \
-<tr> \
-<div align="center" style="background-color:#77ffff; font-family: serif;"> \
+<div align="center" style="background-color:#77ffff; font-family: serif; width:100%;"> \
 <h1>H6nry\'s Page</h1> \
 "Doing the magic." \
 </div> \
-</tr> \
  \
-<tr> \
-<td style="width:175px; background-color:#77ffff; float:left;"><br> \
+<table style="width:100%"> \
+<tr style="width:100%"> \
+<td style="background-color:#77ffff;"><br> \
 <a href="/index.html">Home</a><br><br> \
 <a href="/projects.html">Projects</a><br><br> \
 <a href="http://h6nry.github.io/repo/">Cydia repo</a><br><br> \
 <a href="/tutorial-cydia-repo.html">Tutorial: How to host your own Cydia repo</a><br><br> \
 <a href="http://github.com/H6nry/" target="_blank">Github</a><br><br> \
 </td> \
- \
-<td style="width:175px; float:right; overflow:hidden; white-space: pre-wrap; background-color:#77ffff;"> \
-<iframe src="/counter.html" seamless="seamless" frameBorder="0"></iframe>\
+<td colspan="2"> \
 </td> \
-</tr> \
-<tr> \
-<td style="width:175px; float:left;"></td> \
-<td style="text-align: justify; float:left; font-size:110%; background-color:#FFFFFF;"><br> \
-' + content + ' \
+\
+<td style="overflow:hidden; white-space: pre-wrap; background-color:#77ffff;"> \
+<iframe src="counter.html" seamless="seamless" frameBorder="0"></iframe>\
 </td> \
-<td style="width:175px; float:right;"></td> \
+\
 </tr> \
 </table> \
+<div style="text-align: justify;font-size:110%; background-color:#FFFFFF; min-width: 500px"><br> \
+' + content + ' \
+</div> \
 ';
 document.documentElement.innerHTML = template;
