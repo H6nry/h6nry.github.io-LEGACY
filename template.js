@@ -25,8 +25,8 @@ var template = '\
 <a href="http://github.com/H6nry/" target="_blank">Github</a><br><br> \
 </div> \
  \
-<div  style="position:absolute; right:10; width:175px; float:right; background-color:#77ffff"> \
- \
+<div id="rb" style="position:absolute; right:10; width:175px; float:right; overflow:hidden; white-space: pre-wrap; background-color:#77ffff"> \
+<iframe src="counter.html" seamless="seamless" frameBorder="0"></iframe>\
 </div> \
  \
 <div style="background-color:#FFFFFF; position:absolute; left:190px; width:700px;"> \
