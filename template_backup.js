@@ -1,5 +1,4 @@
 var title = document.getElementById('title').innerHTML;
-var content = document.getElementById('content').innerHTML;
 var template = '\
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> \
 <html> \
@@ -18,22 +17,20 @@ var template = '\
 "Doing the magic." \
 </div> \
  \
-<table style="width:100%"> \
-<td style="width:175px; background-color:#77ffff; float:left;"><br> \
+<div style="position:absolute; left:10; width:175px; float:right; background-color:#77ffff;"><br> \
 <a href="/index.html">Home</a><br><br> \
 <a href="/projects.html">Projects</a><br><br> \
 <a href="http://h6nry.github.io/repo/">Cydia repo</a><br><br> \
 <a href="/tutorial-cydia-repo.html">Tutorial: How to host your own Cydia repo</a><br><br> \
 <a href="http://github.com/H6nry/" target="_blank">Github</a><br><br> \
-</td> \
+</div> \
  \
-<td style="text-align: justify; float:left; font-size:110%; background-color:#FFFFFF;"><br> \
-' + content + ' \
-</td> \
-\
-<td style="width:175px; float:right; overflow:hidden; white-space: pre-wrap; background-color:#77ffff;"> \
+<div id="rb" style="position:absolute; right:10; width:175px; float:right; overflow:hidden; white-space: pre-wrap; background-color:#77ffff"> \
 <iframe src="/counter.html" seamless="seamless" frameBorder="0"></iframe>\
-</td> \
-</table> \
+</div> \
+ \
+<div style="background-color:#FFFFFF; position:absolute; left:190px; width:700px;"> \
+<table><td align="left" style="text-align: justify;  font-size:110%;"><br> \
 ';
-document.documentElement.innerHTML = template;
+var content = document.getElementById('content').innerHTML;
+document.documentElement.innerHTML = template+content;
