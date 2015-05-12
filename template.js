@@ -29,7 +29,7 @@ var template = '\
 <a href="/tutorial-cydia-repo.html">Tutorial: How to host your own Cydia repo</a><br><br> \
 <a href="http://github.com/H6nry/" target="_blank">Github</a><br><br> \
 </td> \
-<td style="text-align: justify; float:left; font-size:110%; background-color:#FFFFFF;"></td> \
+ \
 <td style="width:175px; float:right; overflow:hidden; white-space: pre-wrap; background-color:#77ffff;"> \
 <iframe src="/counter.html" seamless="seamless" frameBorder="0"></iframe>\
 </td> \
