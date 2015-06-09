@@ -20,24 +20,24 @@ var template = '\
  \
 <table style="width:100%"> \
 <tr style="width:100%"> \
-<td style="background-color:#77ffff;"><br> \
+<td style="background-color:#77ffff; vertical-align: top; min-width:100px;"><br> \
 <a href="/index.html">Home</a><br><br> \
 <a href="/projects.html">Projects</a><br><br> \
 <a href="http://h6nry.github.io/repo/">Cydia repo</a><br><br> \
 <a href="/tutorial-cydia-repo.html">Tutorial: How to host your own Cydia repo</a><br><br> \
 <a href="http://github.com/H6nry/" target="_blank">Github</a><br><br> \
 </td> \
-<td colspan="2"> \
+<td> \
+<div style="text-align: justify; font-size:110%; background-color:#FFFFFF; min-width: 300px; max-width: 700px; vertical-align: top;"><br> \
+' + content + ' \
+</div> \
 </td> \
 \
-<td style="overflow:hidden; white-space: pre-wrap; background-color:#77ffff;"> \
+<td style="overflow:hidden; white-space: pre-wrap; background-color:#77ffff; vertical-align: top;"> \
 <iframe src="/counter.html" seamless="seamless" frameBorder="0"></iframe>\
 </td> \
 \
 </tr> \
 </table> \
-<div style="text-align: justify;font-size:110%; background-color:#FFFFFF; min-width: 500px"><br> \
-' + content + ' \
-</div> \
 ';
 document.documentElement.innerHTML = template;
