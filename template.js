@@ -25,6 +25,7 @@ var template = '\
 <a href="/projects.html">Projects</a><br><br> \
 <a href="http://h6nry.github.io/repo/">Cydia repo</a><br><br> \
 <a href="/tutorial-cydia-repo.html">Tutorial: How to host your own Cydia repo</a><br><br> \
+<a href="/c-autoreleasepool.html">C-Autoreleasepool project</a><br><br> \
 <a href="http://github.com/H6nry/" target="_blank">Github</a><br><br> \
 </td> \
 <td> \
