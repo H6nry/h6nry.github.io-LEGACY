@@ -23,7 +23,7 @@ OF COURSE need to include the header file <i>C-Autoreleasepool.h</i> and compile
 <i>gc_end_autoreleasepool()</i> at the end of your heap-allocating block should do exactly the same as of Version 0.9.
 As said this is unadvised and may change soon.<br><br>
 To download the two framework files and some testing-and demo files, head over to my Github or just click here for the
-<b><a href="https://github.com/H6nry/" target="_blank">C-Autoreleasepool framework on Github by H6nry</a></b>.
+<b><a href="https://github.com/H6nry/c-autoreleasepool/" target="_blank">C-Autoreleasepool framework on Github by H6nry</a></b>.
 <h4>Technical details</h4>
 The code just "hooks" malloc,free,... with its own versions of them which just add some reference counting stuff and call the original functions again. To make using
 of this as easy as possible, i also wrote a macro so that you can have a "real" code-block instead of having to call single functions. Also the gc_autoreleasepool
