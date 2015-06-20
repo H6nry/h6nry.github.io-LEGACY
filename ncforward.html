@@ -1,11 +1,151 @@
-<div id="title">NCForward</div>
+<div id="title">NCForward tweak project</div>
 <div id="content">
 <h2>NCForward documentation and more</h2>
 <h3>A feature Apple, should have implemented way earlier</h3>
-NCforward is a small project i started to implement a feature Apple should have implemented way earlier.
-The feature is to forward every single notification you get on your loved iDevice to any other computer.
-No matter what OS, no matter how these are displayed, just forward them, anywhere.
+<h4>Short version</h4>
+<a href="http://h6nry.github.io/repo/" target="blank_"><b>Download the Cydia tweak here.</b></a><br>
+<a href="Files/NCForward1.exe" target="blank_"><b>Download the Windows client here.</b></a>
+<h4>Long version</h4>
+NCforward is a small project i started to implement a feature in iOS Apple should have implemented way earlier.
+The feature is to forward every single notification you get on your loved iDevice to any other computer in your local network.
+No matter what OS, no matter how these are displayed, just forward them, anywhere. Currently i only wrote a Windows client but making one for Mac/Linux/...
+is not hard at all if you know a bit about scripting and networking! Look down for more info!
+You can download the Tweak, which you WILL have to install, right here on my repo: <a href="http://h6nry.github.io/repo/" target="blank_">H6nry' Cydia repo</a>.
+You can install the Windows "client" counterpart by clicking on <a href="Files/NCForward1.exe" target="blank_">THIS LINK</a>, downloading the file and
+putting it into your Autostart folder (Which is somwhere here: C:\Users\[Username]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup).
+If you don't want to reboot, just execute it now by double-clicking and say yes if Windows asks you to allow network access.<br><br>
+As always, you do this ON YOUR OWN RISK!
+<h4>Protocol documentation</h4>
+As promised, it is very simple to write a notification reciever for the NCForward1 protocol. The whole thing is based on the UDP/Datagram protocol which
+allows you to have connectionless communication between two devices, so communication is as easy as i could do it. The whole thing is, the iDevice sends
+a packet (message) to a computer which is in the same network and which has a client (well, the computer is the SERVER and the iDevice is the client but
+anyways :P) running which recieves the messages and displays them on the PC. No packets are sent back as confirmation, no connection is established, just
+the very basics. This also means that EVERY single computer is able to recieve your notifications as long as you set a different reciever address in your
+settings, the default is to broadcast to the whole local network on 255.255.255.255 but you can set this to any IP in your (W)LAN.<br><br>
+The packages are sent to the port 3156 on the reciever's computer and consist of 8 parts, each of them will is separated by the characters <i>%!</i>.
+This is no good practice, i know but easy to do :P.<br><br>
+The eight parts are:<br>
+<table border="1">
+<tr><td>1</td><td>NCFV1_PV1</td><td>The protocol identifier, NCF: magic, V1: version 1, _P: magic, V1: protocol version 1. You should really check these as they
+may change soon in a later revision!</td></tr>
+<tr><td>2</td><td>bulletin.sectionDisplayName</td><td>The bulletin section display name?</td></tr>
+<tr><td>3</td><td>bulletin.topic</td><td>The topic?</td></tr>
+<tr><td>4</td><td>bulletin.sectionID</td><td>The section ID?</td></tr>
+<tr><td>5</td><td>bulletin.content.title</td><td>The title of the notification you can see on your iDevice.</td></tr>
+<tr><td>6</td><td>bulletin.content.subtitle</td><td>A subtitle?</td></tr>
+<tr><td>7</td><td>bulletin.content.message</td><td>The message of the bulletin you can see on your iDevice.</td></tr>
+<tr><td>8</td><td>bulletin.date.description</td><td>Some date.</td></tr>
+</table>
+As you may recognized, only numbers 1, 5 and 7 are currently used by my Windows client, i don't really know what the others are.
+If you came up with something awesome, tell me (<a href="mailto:henry.anonym@gmail.com?subject=H6nrys website - NCForward">henry.anonym@gmail.com</a>)
+and i will (maybe) link it here!
+<h5>The Windows NCForward "client"</h5>
+Written in AutoIT, quite self-explanatory.
+<textarea style="width: 100%; height:1000px;" readonly>
+#cs ----------------------------------------------------------------------------
 
+ AutoIt Version: 3.3.8.1
+ Author:         H6nry <henry.anonym@gmail.com>
+
+ Script Function:
+	Counterpart of the NCForward iOS Cydia tweak. You will definitely need this, if you want to use NCForward.
+	License of this code: You are allowed to learn from this but not allowed to copy this.
+
+#ce ----------------------------------------------------------------------------
+
+#include <GUIConstantsEx.au3>
+#include <EditConstants.au3>
+#include <windowsconstants.au3>
+#include <WinAPI.au3>
+#include <Color.au3>
+
+$debug = 0
+
+$port=3156
+$ip=@IPAddress1
+$data=""
+
+
+UDPShutdown() ;shutdown previous UDP stuff
+UDPStartup() ;start UDP stuff
+$socket = UDPBind($ip, $port) ;bind a socket to the local ip and port 3156
+If @error Then MsgBox(0,"UDP bind error",@error)
+
+If $debug=1 Then ;This is just for debug. Set debug=1 above to see the console
+   GUICreate("NCforward debug mode @ " & $ip & " : " & $port, 500, 500)
+   $inp=GUICtrlCreateEdit("", 0, 0, 500, 500, $ES_READONLY)
+   GUISetState()
+	  
+   While 1
+		 $data = UDPRecv($socket, 500, 3)
+		 
+		 If $data <> "" Then
+			GUICtrlSetData($inp, "Recieved: " & BinaryToString($data[0],4) & @CRLF & GUICtrlRead($inp)) ; sh auch http://wiki.vg/Pocket_Minecraft_Protocol
+		 EndIf
+		 
+	  Sleep(100)
+	  
+	  $msg = GUIGetMsg()
+	  If $msg = $GUI_EVENT_CLOSE Then Exit
+	  
+   WEnd
+Else ;Interesting part starts here.
+   GUICreate("NCForward", 350, 100, 0, 100, $WS_POPUP, $WS_EX_TOOLWINDOW) ;create a GUI.
+   GUISetBkColor(0x3223344)
+   GUISetState(@SW_HIDE) ;hide the GUI initially
+   ;GUISetState(@SW_SHOW)
+   $title=GUICtrlCreateLabel("",10,10,330,20) ;create the title
+   GUICtrlSetFont($title,12,600, 0, "", 5)
+   GUICtrlSetColor ($title, 0xffffff)
+   $message=GUICtrlCreateLabel("",15,30,320,60) ;create the message field
+   GUICtrlSetFont($message,9,300, 0, "", 5)
+   GUICtrlSetColor ($message, 0xffffff)
+   
+   $timer = TimerInit() ;init a timer to timeout the notification
+   While 1
+	  $data = UDPRecv($socket, 500, 3) ;get some udp packets
+	  
+	  If $data <> "" Then ;when there are actually packets
+		 $splitnot = StringSplit(BinaryToString($data[0],4), "%!", 1) ;look if you can take apart the recieved stuff
+		 
+		 If $splitnot[1] == "NCFV1_PV1" Then ;Do all the cool stuff here! The protocol version is right when passing this!
+			$timer = TimerInit() ;reinit the timer to reset.
+			
+			GUICtrlSetData($title,"") ;clear previous stuff
+			If $splitnot[5] <> "NULL" Then
+			   GUICtrlSetData($title,$splitnot[5]) ;if the field number 5 (title) is not empty, fill it in the GUI
+			EndIf
+			
+			GUICtrlSetData($message, "")
+			If $splitnot[7] <> "NULL" Then
+			   GUICtrlSetData($message, $splitnot[7]) ;if the field number 7 (message) is not empty, fill it in the GUI
+			EndIf
+			
+			;Beep(660,1)
+			GUISetState(@SW_SHOWNORMAL) ;finally show the gui
+		 EndIf
+	  EndIf
+	  
+	  If TimerDiff($timer)>2000 Then
+		 GUISetState(@SW_HIDE) ;if timer ran out, hide the gui again
+	  EndIf
+	  
+	  $msg = GUIGetMsg()
+	  If $msg = $GUI_EVENT_CLOSE Then Exit
+	  If $msg = $GUI_EVENT_SECONDARYDOWN Then GUISetState(@SW_HIDE) ;does not work for some reason
+	  
+	  Sleep(10) ;wait 10 milliseconds before proceeding
+   WEnd
+EndIf
+
+
+Func _ColorBGRToRGB($BGR) ;function to make a rgb color out of bgr, not used yet!
+	Local $RGB = BitShift($BGR, -16)
+	$RGB += BitAND($BGR, 0xff00)
+	$RGB += BitShift($BGR, 16)
+	Return BitAND($RGB, 0xffffff)
+EndFunc
+</textarea>
 </div>
 
 <!-- include this everywhere you want the standard design template from here... -->

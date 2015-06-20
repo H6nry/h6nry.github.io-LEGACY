@@ -8,10 +8,10 @@ He is developing it for years now and it seems like the whole program is a huge 
 they can use Twitter on their smartphones much easier. Also i did not want to wait an additional year to try it out so i wrote my own
 shitty Twitter client for Windows Vista, Windows 7, Windows 8 and Windows 10 (i did not test it!).<br><br>
 <a href="Files/Surutcra Twitter.exe" target="blank_">Click this link to see what came out of a bad idea and some crappy scripting.</a>
-I wrote this myself in less than 5 hours (including this documentation) so do not blame me for anything, use it ony our own risk!
-To reload a site/view/whatever just press <i>r</i>, to go home, press <i>h</i>. That easy, that crappy.<br><br>
+I wrote this myself in less than 5 hours (including this documentation) so do not blame me for anything, use it on your own risk!
+To reload a site/view/whatever just press <i>Strg+r</i>, to go home, press <i>Strg+h</i>. That easy, that crappy.<br><br>
 <h4>Source code, written completely in <a href="https://www.autoitscript.com/site/autoit/" target="blank_">AutoIT</a></h4>
-<textarea style="width: 100%; height:1000px;">#cs ----------------------------------------------------------------------------
+<textarea style="width: 100%; height:1000px;" readonly>#cs ----------------------------------------------------------------------------
 
  AutoIt Version: 3.3.8.1
  Author:         H6nry <henry.anonym@gmail.com>
@@ -37,7 +37,7 @@ GUICtrlSetResizing($dis,102)
 GUISetState()
 $reload = GUICtrlCreateDummy()
 $home = GUICtrlCreateDummy()
-Local $AccelKeys[2][2] = [["r", $reload],["h", $home]]
+Local $AccelKeys[2][2] = [["^r", $reload],["^h", $home]]
 GUISetAccelerators($AccelKeys)
 
 _SetUserAgent("Mozilla/5.0 (iPhone; CPU iPhone OS 6_0 like Mac OS X) AppleWebKit/536.26 (KHTML, like Gecko) Version/6.0 Mobile/10A5376e Safari/8536.25")

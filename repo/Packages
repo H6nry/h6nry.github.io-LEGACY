@@ -72,3 +72,18 @@ Name: SwipeSwitcher6
 Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/swipeswitcher6/index.html
 
+Package: org.h6nry.ncforward
+Version: 0.1-18
+Section: Tweaks
+Maintainer: H6nry
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm
+Filename: Files/org.h6nry.ncforward_0.1-18_iphoneos-arm-armv7-arm64-sdk7.1.deb
+Size: 13800
+Installed-Size: 152
+MD5sum: 7d755fb019d606378132d0465a3b7968
+Description: Forward iOS notfications to any other device.
+Name: NCForward
+Author: H6nry <henry.anonym@gmail.com>
+Depiction: http://h6nry.github.io/repo/Files/ncforward/index.html
+
