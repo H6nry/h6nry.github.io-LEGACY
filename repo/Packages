@@ -87,3 +87,18 @@ Name: NCForward
 Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/ncforward/index.html
 
+Package: org.h6nry.peaceswitcher
+Version: 0.0.1-12
+Section: Tweaks
+Maintainer: H6nry <henry.anonym@gmail.com>
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Filename: Files/peaceswitcher/org.h6nry.peaceswitcher_0.0.1-12_iphoneos-arm.deb
+Size: 1840
+Installed-Size: 16
+MD5sum: 6957468fae12707d6e1c7681aa947f21
+Description: An awesome MobileSubstrate tweak!
+Name: PeaceSwitcher
+Author: H6nry <henry.anonym@gmail.com>
+Depiction: http://h6nry.github.io/repo/Files/peaceswitcher/index.html
+

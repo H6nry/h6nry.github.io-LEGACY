@@ -1,3 +1,4 @@
+var content = document.getElementById('content').innerHTML;
 var template = ' \
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> \
 <html> \
@@ -16,14 +17,18 @@ var template = ' \
 </div> \
  \
 <div align="center" style="background-color:#FFFFFF;"> \
-<table><td> \
-';
-
-var content = document.getElementById('content').innerHTML;
-
-var bottom = '\
+<table> \
+<tr style="width:100%"> \
+<td> \
+<div style="text-align: justify; font-size:110%; background-color:#FFFFFF; min-width: 300px; max-width: 700px; vertical-align: top;"><br> \
+' + content + '\
+</div> \
 <h3><a href="https://twitter.com/H6nry_/" target="_blank">Me on Twitter: H6nry_</a><br> \
 <a href="https://github.com/H6nry/" target="_blank">Me on Github: H6nry</a><br> \
 <a href="http://h6nry.github.io/" target="_blank">My Website</a></h3> \
+</td> \
+\
+</tr> \
+</table> \
 ';
-document.write(template + content + bottom);
+document.documentElement.innerHTML = template;
