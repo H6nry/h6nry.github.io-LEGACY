@@ -74,16 +74,16 @@ Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/swipeswitcher6/index.html
 
 Package: org.h6nry.ncforward
-Version: 2.1-1
+Version: 2.2-1
 Section: Tweaks
 Maintainer: H6nry <henry.anonym@gmail.com>
 Depends: firmware (>= 5.0), mobilesubstrate, preferenceloader
 Architecture: iphoneos-arm
-Filename: Files//ncforward/org.h6nry.ncforward_2.1-1_iphoneos-arm-armv7-armv7s-arm64-sdk8.4.deb
-Size: 943012
-Installed-Size: 1124
-MD5sum: f27fc31ac3ea939cb69379f3eedf5956
-Description: Forward iOS notfications to any other device. Or: Continuity feature for everyone!
+Filename: Files//ncforward/org.h6nry.ncforward_2.2-1_iphoneos-arm-armv7-armv7s-arm64-sdk8.4.deb
+Size: 50840
+Installed-Size: 336
+MD5sum: 9840ccb69adb994ea7c67ce670f6016d
+Description: Forward iOS notfications to any other device.
 Name: NCForward
 Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/ncforward/index.html
