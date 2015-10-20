@@ -79,7 +79,7 @@ Section: Tweaks
 Maintainer: H6nry <henry.anonym@gmail.com>
 Depends: firmware (>= 5.0), mobilesubstrate, preferenceloader
 Architecture: iphoneos-arm
-Filename: Files//ncforward/org.h6nry.ncforward_1.0-3_iphoneos-arm-armv7-arm64-sdk7.1.deb
+Filename: Files/ncforward/org.h6nry.ncforward_1.0-3_iphoneos-arm-armv7-arm64-sdk7.1.deb
 Size: 909172
 Installed-Size: 1028
 MD5sum: 490f67e4ab92758fac2ba999a6e02139
@@ -93,7 +93,7 @@ Section: Tweaks
 Maintainer: H6nry <henry.anonym@gmail.com>
 Depends: firmware (>= 5.0), mobilesubstrate, preferenceloader
 Architecture: iphoneos-arm
-Filename: Files//ncforward/org.h6nry.ncforward_1.1-1_iphoneos-arm-armv7-arm64-sdk8.4.deb
+Filename: Files/ncforward/org.h6nry.ncforward_1.1-1_iphoneos-arm-armv7-arm64-sdk8.4.deb
 Size: 912086
 Installed-Size: 1028
 MD5sum: 75e18b9e7844a4997283cbb867f88fba
@@ -107,7 +107,7 @@ Section: Tweaks
 Maintainer: H6nry <henry.anonym@gmail.com>
 Depends: firmware (>= 5.0), mobilesubstrate, preferenceloader
 Architecture: iphoneos-arm
-Filename: Files//ncforward/org.h6nry.ncforward_2.0-16_iphoneos-arm-armv7-armv7s-arm64-sdk8.4.deb
+Filename: Files/ncforward/org.h6nry.ncforward_2.0-16_iphoneos-arm-armv7-armv7s-arm64-sdk8.4.deb
 Size: 943788
 Installed-Size: 1128
 MD5sum: 8eec2d61075baf89c5702f2c6adf7f80
@@ -121,7 +121,7 @@ Section: Tweaks
 Maintainer: H6nry <henry.anonym@gmail.com>
 Depends: firmware (>= 5.0), mobilesubstrate, preferenceloader
 Architecture: iphoneos-arm
-Filename: Files//ncforward/org.h6nry.ncforward_2.1-1_iphoneos-arm-armv7-armv7s-arm64-sdk8.4.deb
+Filename: Files/ncforward/org.h6nry.ncforward_2.1-1_iphoneos-arm-armv7-armv7s-arm64-sdk8.4.deb
 Size: 943012
 Installed-Size: 1124
 MD5sum: f27fc31ac3ea939cb69379f3eedf5956
@@ -135,7 +135,7 @@ Section: Tweaks
 Maintainer: H6nry <henry.anonym@gmail.com>
 Depends: firmware (>= 5.0), mobilesubstrate, preferenceloader
 Architecture: iphoneos-arm
-Filename: Files//ncforward/org.h6nry.ncforward_2.2-1_iphoneos-arm-armv7-armv7s-arm64-sdk8.4.deb
+Filename: Files/ncforward/org.h6nry.ncforward_2.2-1_iphoneos-arm-armv7-armv7s-arm64-sdk8.4.deb
 Size: 50840
 Installed-Size: 336
 MD5sum: 9840ccb69adb994ea7c67ce670f6016d
@@ -150,7 +150,7 @@ Section: Tweaks
 Maintainer: H6nry <henry.anonym@gmail.com>
 Depends: firmware (>= 5.0), mobilesubstrate, preferenceloader
 Architecture: iphoneos-arm
-Filename: Files//ncforward/org.h6nry.ncforward_2.2-4_iphoneos-arm-armv7-armv7s-arm64-sdk9.0.deb
+Filename: Files/ncforward/org.h6nry.ncforward_2.2-4_iphoneos-arm-armv7-armv7s-arm64-sdk9.0.deb
 Size: 50812
 Installed-Size: 336
 MD5sum: 929e54fac46420d0a4f36f39440765c8
@@ -174,3 +174,18 @@ Name: PeaceSwitcher
 Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/peaceswitcher/index.html
 
+
+Package: org.h6nry.legacyvibes
+Version: 0.0.1-55
+Section: Tweaks
+Maintainer: H6nry <henry.anonym@gmail.com>
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Filename: Files/legacyvibes/org.h6nry.legacyvibes_0.0.1-55_iphoneos-arm.deb
+Size: 4708
+Installed-Size: 168
+MD5sum: 71dd3a5b0f53b38bd169c22705b6c2f3
+Description: An awesome MobileSubstrate tweak!
+Name: LegacyVibes
+Author: H6nry <henry.anonym@gmail.com>
+Depiction: http://h6nry.github.io/repo/Files/legacyvibes/index.html
