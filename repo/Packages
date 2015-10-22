@@ -159,6 +159,21 @@ Name: NCForward
 Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/ncforward/index.html
 
+Package: org.h6nry.ncforward
+Version: 2.2-19
+Section: Tweaks
+Maintainer: H6nry <henry.anonym@gmail.com>
+Depends: firmware (>= 5.0), mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm
+Filename: Files//ncforward/org.h6nry.ncforward_2.2-19_iphoneos-arm-armv7-armv7s-arm64-sdk9.0.deb
+Size: 51290
+Installed-Size: 368
+MD5sum: 8b1fccae4a5157692a91c8e10ff8403f
+Description: Forward iOS notfications to any other device.
+Name: NCForward
+Author: H6nry <henry.anonym@gmail.com>
+Depiction: http://h6nry.github.io/repo/Files/ncforward/index.html
+
 Package: org.h6nry.peaceswitcher
 Version: 0.0.1-12
 Section: Tweaks
