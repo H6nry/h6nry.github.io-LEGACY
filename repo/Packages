@@ -204,3 +204,18 @@ Description: An awesome MobileSubstrate tweak!
 Name: LegacyVibes
 Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/legacyvibes/index.html
+
+Package: org.h6nry.statusbarlockicon
+Version: 0.0.1-93
+Section: Tweaks
+Maintainer: H6nry <henry.anonym@gmail.com>
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Filename: Files//statusbarlockicon/org.h6nry.statusbarlockicon_0.0.1-93_iphoneos-arm.deb
+Size: 8680
+Installed-Size: 192
+MD5sum: 41f6a1cf6b21ced1cd37568118a2cb10
+Description: An awesome MobileSubstrate tweak!
+Name: StatusBarLockIcon
+Author: H6nry <henry.anonym@gmail.com>
+Depiction: http://h6nry.github.io/repo/Files/statusbarlockicon/index.html
