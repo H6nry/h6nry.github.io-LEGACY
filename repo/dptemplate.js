@@ -23,6 +23,7 @@ var template = ' \
 <div style="text-align: justify; font-size:110%; background-color:#FFFFFF; min-width: 300px; max-width: 700px; vertical-align: top;"><br> \
 ' + content + '\
 </div> \
+<hr> \
 <h3><a href="https://twitter.com/H6nry_/" target="_blank">Me on Twitter: H6nry_</a><br> \
 <a href="https://github.com/H6nry/" target="_blank">Me on Github: H6nry</a><br> \
 <a href="http://h6nry.github.io/" target="_blank">My Website</a></h3> \

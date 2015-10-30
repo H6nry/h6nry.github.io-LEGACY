@@ -3,6 +3,55 @@
 This is my Cydia repo.<br>
 Feel free to add it to your list! Maybe some awesome stuff waits for you here ;)<br>
 <a href="cydia://url/https://cydia.saurik.com/api/share#?source=http://h6nry.github.io/repo/">OPEN CYDIA!</a>
+<hr>
+<h4>These are the packages on this repo</h4>
+<div id="samples" style="width:100%"></div>
+<script type="text/javascript">
+function parsePackages(parse, search) {
+	var depictionArray = [];
+	while (parse.indexOf("\r") >= 0)
+        parse = parse.replace("\r", "");
+    var arrLines = parse.split("\n");
+    for (var i = 0; i < arrLines.length; i++) {
+        var curLine = arrLines[i];
+        var line = curLine.split(':');
+        if (line[0] == search) {
+        	var url = curLine.split(search+':')[1];
+        	if (depictionArray.indexOf(url) == -1) {
+        		depictionArray.push(url);
+        	}
+        }
+    }
+    return depictionArray;
+}
+
+var xhr;
+if (window.XMLHttpRequest) {
+    xhr = new XMLHttpRequest();
+} else if (window.ActiveXObject) {
+    xhr = new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+xhr.onreadystatechange = function(){
+	if (!(xhr.readyState == 4)) return;
+	var depictionArray = parsePackages(xhr.responseText, 'Name'); //Depiction
+	if (!depictionArray) return;
+	/*var c;
+	for (c = 0; c < depictionArray.length; ++c) {
+    	var iframe = document.createElement('iframe');
+		iframe.src = depictionArray[c];
+		iframe.width = "320px";
+		iframe.height = "586px";
+		document.getElementById('samples').appendChild(iframe);
+	}*/
+	var c;
+	for (c = 0; c < depictionArray.length; ++c) {
+		document.getElementById('samples').innerHTML = document.getElementById('samples').innerHTML + (depictionArray[c]+'<br>');
+	}
+};
+xhr.open("GET","Packages");
+xhr.send();
+</script>
 </div>
 
 <!-- include this everywhere you want the standard design template from here... -->
