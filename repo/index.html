@@ -114,8 +114,9 @@ xhr.onreadystatechange = function() {
 		//The following code is very messy. You have been warned.
 		document.getElementById('samples').innerHTML = document.getElementById('samples').innerHTML +
 			'<a href="#" onclick="var e = document.getElementById(\'u_' + pack._Package + '\'); e.style.display = e.style.display= (e.style.display == \'block\' ? \'none\' : \'block\');">' +
-			pack._Name + ' (' + pack._Version + '): ' + pack._Description + '</a><br>' +
+			pack._Name + ' (' + pack._Version + ')</a><br>' +
 			'<div id="u_' + pack._Package + '" style="display:none;">' +
+			'&nbsp;&nbsp;' + pack._Description + '<br>' +
 			'&nbsp;&nbsp;<a href="' + pack._Depiction + '" target="_blank">Show more info.</a><br>' +
 			'&nbsp;&nbsp;<a href="' + pack._Filename + '" target="_blank">Download the .deb package.</a><br><br>' +
 			'</div>';
