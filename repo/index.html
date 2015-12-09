@@ -1,0 +1,135 @@
+<div id="title">H6nry's Cydia repo</div>
+<div id="content">
+This is my Cydia repo.<br>
+Feel free to add it to your list! Maybe some awesome stuff waits for you here ;)<br><br>
+<a href="cydia://url/https://cydia.saurik.com/api/share#?source=http://h6nry.github.io/repo/"><b>Open Cydia for me!</b></a><span id="ocy"></span><br><br>
+<hr>
+<h4>These are the packages on this repo</h4>
+<div id="samples" style="width:100%"></div>
+<script type="text/javascript">
+//Some fast iOS check.
+is_ios = (navigator.userAgent.match(/iPad/i) != null) || (navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null);
+if (!is_ios) document.getElementById('ocy').innerHTML = ' Most probably, you will not be able to open Cydia.';
+
+//The functionality for the package list.
+function Apt_package() {
+	this._Package;
+	this._Version;
+	this._Section;
+	this._Installed_Size;
+	this._Description;
+	this._Name;
+	this._Author;
+	this._Filename;
+	this._Depiction;
+} //Constructor for Apt_package object.
+
+function parsePackage(string) {
+	var a_package = new Apt_package();
+	var lines = string.split('\n');
+
+	var c;
+	for (c = 0; c < lines.length; ++c) {
+		var line = lines[c];
+		if (line.search(':') == -1) return undefined;
+
+		var components = line.split(':'); //Quick and dirty.
+		var key = components.shift();
+		var value = components.join(':').trim();
+
+		switch (key) {
+			case 'Package':
+				a_package._Package = value;
+				break;
+			case 'Version':
+				a_package._Version = value;
+				break;
+			case 'Section':
+				a_package._Section = value;
+				break;
+			case 'Installed-Size':
+				a_package._Installed_Size = value;
+				break;
+			case 'Description':
+				a_package._Description = value;
+				break;
+			case 'Name':
+				a_package._Name = value;
+				break;
+			case 'Author':
+				a_package._Author = value;
+				break;
+			case 'Filename':
+				a_package._Filename = value;
+				break;
+			case 'Depiction':
+				a_package._Depiction = value;
+				break;
+			default:
+				break; //Unknown key.
+		}
+	}
+
+	return a_package;
+}
+
+function parsePackages(parse) {
+	var depictions = {};
+	while (parse.indexOf('\r') >= 0) parse = parse.replace('\r', ''); //Remove all carriage returns, which should not be there, anyways.
+    
+    var packages = parse.split('\n\n');
+
+	for (var c = 0; c < packages.length; ++c) {
+		var a_package = parsePackage(packages[c]);
+		if (a_package == undefined) continue;
+
+		var pid = a_package._Package;
+
+		if (depictions[pid] && (parseFloat(a_package._Version) >= parseFloat(depictions[pid]._Version))) { //Only keep the latest version.
+			depictions[pid] = a_package;
+		} else if (depictions[pid] == undefined) { //Package not added yet, add.
+			depictions[pid] = a_package;
+		}
+	}
+
+    return depictions;
+}
+
+var xhr;
+if (window.XMLHttpRequest) {
+    xhr = new XMLHttpRequest();
+} else if (window.ActiveXObject) {
+    xhr = new ActiveXObject('Microsoft.XMLHTTP');
+}
+
+xhr.onreadystatechange = function() {
+	if (!(xhr.readyState == 4)) return;
+
+	var depictionArray = parsePackages(xhr.responseText);
+	if (!depictionArray) return;
+	
+	for (key in depictionArray) {
+		var pack = depictionArray[key];
+
+		//The following code is very messy. You have been warned.
+		document.getElementById('samples').innerHTML = document.getElementById('samples').innerHTML +
+			'<a href="#" onclick="var e = document.getElementById(\'u_' + pack._Package + '\'); e.style.display = e.style.display= (e.style.display == \'block\' ? \'none\' : \'block\');">' +
+			pack._Name + ' (' + pack._Version + '): ' + pack._Description + '</a><br>' +
+			'<div id="u_' + pack._Package + '" style="display:none;">' +
+			'&nbsp;&nbsp;<a href="' + pack._Depiction + '" target="_blank">Show more info.</a><br>' +
+			'&nbsp;&nbsp;<a href="' + pack._Filename + '" target="_blank">Download the .deb package.</a><br><br>' +
+			'</div>';
+	}
+};
+
+xhr.open("GET","Packages");
+xhr.send();
+</script>
+</div>
+
+<!-- include this where you want the standard design template from here... -->
+<script type="text/javascript" src="../template.js"></script>
+<noscript>
+As this website uses JavaScript to generate a semi-dynamically created page, you need to activate JavaScript!
+</noscript>
+<!-- ...until here! -->
