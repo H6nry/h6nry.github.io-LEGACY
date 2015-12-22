@@ -96,3 +96,79 @@ function makeWarm() {
 
 makeWarm(); //Fire directly.
 window.setInterval(makeWarm, 30000); //Fire every 30 sec.
+
+
+//The following makes some winter feeling. I wonder that this code even works...
+var flakes = [];
+
+function startWinter() {
+	document.head.innerHTML = document.head.innerHTML + '<style>@keyframes rotate {0% {transform:rotate(360deg);} 100% {transform:rotate(0deg);}}</style>'; //Paste some snowflake animation code into the head.
+
+	for (var i = 0; i < 10; i++) { //Create some random snowflakes
+		var snf = document.createElement('img');
+		snf.setAttribute('src', '/Files/snowflake.svg');
+		snf.style.position = 'fixed';
+		snf.style.top = '-30px';
+		snf.style.left = Math.floor(window.innerWidth * Math.random()) + 'px';
+		snf.style.width = '30px';
+		snf.style.height = '30px';
+		snf.style.pointerEvents = 'none';
+		var sec = Math.floor((20-5) * Math.random() + 5) + 's';
+		snf.style.transition = 'transform ' + sec + ' linear, top ' + sec + ' linear, left ' + sec + ' linear';
+		snf.addEventListener("transitionend", updateFlake); //Everytime the transition is finished (the flake has reached page bottom), this will fire.
+		snf.style.animation = 'rotate ' + sec + ' linear 0s infinite ' + (Math.random() > 0.5 ? 'reverse' : ''); //More rotation hack.
+		document.body.appendChild(snf);
+
+		flakes[i] = snf;
+	};
+}
+
+function updateFlake() { //This gets fired with every snowflake which reaches the bottom.
+	var r = Math.random();
+
+	if (event.propertyName == 'top') {
+		this.style.display = 'none'; //Hack, this will stop transitions to animate
+		this.style.top = '-30px';
+		this.style.left = Math.floor(window.innerWidth * r) + 'px';
+		var sec = Math.floor((20-5) * r + 5) + 's';
+		this.style.transition = 'top ' + sec + ' linear, left ' + sec + ' linear';
+
+		var o = this;
+		window.setTimeout(function () { //More hack, this will definitely break.
+			o.style.display = 'block';
+			window.setTimeout(function () {
+				o.style.top = window.innerHeight + 'px';
+			}, 500);
+		}, 500);
+	}
+}
+
+function startAnimation() { //Here, we start our bad stuff.
+	var date = new Date();
+	var m = date.getMonth();
+	if (m == 10 || m == 11 || m == 0 || m == 1) {
+		startWinter();
+
+		this.remove();
+		window.setTimeout(function () {
+			for (var i = 0; i < 10; i++) {
+				flakes[i].style.top = window.innerHeight +'px';
+			};
+		}, 100);
+	}
+}
+
+//Bad, hacky check to see if this browser supports what we do here .~.
+var tte = document.createElement('img');
+tte.setAttribute('src', '/Files/snowflake.svg');
+tte.style.transition = 'transform 0.1s linear';
+tte.style.width = '0px';
+tte.style.height = '0px';
+tte.addEventListener("transitionend", startAnimation);
+document.body.appendChild(tte);
+
+window.setTimeout(function () {
+	tte.style.transform = 'rotate(90deg)';
+}, 100);
+
+
