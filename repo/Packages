@@ -219,3 +219,18 @@ Description: Get back the lock on lockscreen!
 Name: StatusBarLockIcon
 Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/statusbarlockicon/index.html
+
+Package: org.h6nry.adowngrader
+Version: 0.0.1-21
+Section: Tweaks
+Maintainer: H6nry <henry.anonym@gmail.com>
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm
+Filename: Files//adowngrader/org.h6nry.adowngrader_0.0.1-21_iphoneos-arm.deb
+Size: 6704
+Installed-Size: 216
+MD5sum: 36e394d04007ccc87b7e9f54c6c38015
+Description: Downgrade your apps, well, at least try it.
+Name: Adowngrader
+Author: H6nry <henry.anonym@gmail.com>
+Depiction: http://h6nry.github.io/repo/Files/adowngrader/index.html
