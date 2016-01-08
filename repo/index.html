@@ -24,14 +24,14 @@ function Apt_package() {
 	this._Depiction;
 } //Constructor for Apt_package object.
 
-function parsePackage(string) {
+function parsePackage(string) { //TODO: Make sure no key is undefined
 	var a_package = new Apt_package();
 	var lines = string.split('\n');
 
 	var c;
 	for (c = 0; c < lines.length; ++c) {
 		var line = lines[c];
-		if (line.search(':') == -1) return undefined;
+		if (line.search(':') == -1) continue;
 
 		var components = line.split(':'); //Quick and dirty.
 		var key = components.shift();
@@ -81,10 +81,10 @@ function parsePackages(parse) {
 
 	for (var c = 0; c < packages.length; ++c) {
 		var a_package = parsePackage(packages[c]);
-		if (a_package == undefined) continue;
+		if (typeof a_package == 'undefined') continue;
 
 		var pid = a_package._Package;
-
+		
 		if (depictions[pid] && (parseFloat(a_package._Version) >= parseFloat(depictions[pid]._Version))) { //Only keep the latest version.
 			depictions[pid] = a_package;
 		} else if (depictions[pid] == undefined) { //Package not added yet, add.
