@@ -114,9 +114,9 @@ function startWinter() {
 		snf.style.height = '30px';
 		snf.style.pointerEvents = 'none';
 		var sec = Math.floor((20-5) * Math.random() + 5) + 's';
-		snf.style.transition = 'transform ' + sec + ' linear, top ' + sec + ' linear, left ' + sec + ' linear';
+		snf.style.transition = 'top ' + sec + ' linear';
 		snf.addEventListener("transitionend", updateFlake); //Everytime the transition is finished (the flake has reached page bottom), this will fire.
-		snf.style.animation = 'rotate ' + sec + ' linear 0s infinite ' + (Math.random() > 0.5 ? 'reverse' : ''); //More rotation hack.
+		snf.style.animation = 'rotate ' + Math.floor((20-5) * Math.random() + 5) + 's linear 0s infinite ' + (Math.random() > 0.5 ? 'reverse' : ''); //More rotation hack.
 		document.body.appendChild(snf);
 
 		flakes[i] = snf;
@@ -124,14 +124,12 @@ function startWinter() {
 }
 
 function updateFlake() { //This gets fired with every snowflake which reaches the bottom.
-	var r = Math.random();
-
 	if (event.propertyName == 'top') {
 		this.style.display = 'none'; //Hack, this will stop transitions to animate
 		this.style.top = '-30px';
-		this.style.left = Math.floor(window.innerWidth * r) + 'px';
-		var sec = Math.floor((20-5) * r + 5) + 's';
-		this.style.transition = 'top ' + sec + ' linear, left ' + sec + ' linear';
+		this.style.left = Math.floor(window.innerWidth * Math.random()) + 'px';
+		var sec = Math.floor((20-5) * Math.random() + 5) + 's';
+		this.style.transition = 'top ' + sec + ' linear';
 
 		var o = this;
 		window.setTimeout(function () { //More hack, this will definitely break.
