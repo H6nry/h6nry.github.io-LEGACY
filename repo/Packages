@@ -247,3 +247,18 @@ MD5sum: b6a08c149b213a4d25ea0155c53cbf6d
 Description: An awesome MobileSubstrate tweak!
 Name: Tapcounter
 Author: H6nry <henry.anonym@gmail.com>
+
+Package: org.h6nry.tapcounter
+Version: 0.1-1
+Section: Tweaks
+Maintainer: H6nry <henry.anonym@gmail.com>
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm
+Filename: Files//tapcounter/org.h6nry.tapcounter_0.1-1_iphoneos-arm.deb
+Size: 8306
+Installed-Size: 544
+MD5sum: 3173586e3d91b5d91d14eab78c71af54
+Description: Count your taps!
+Name: Tapcounter
+Author: H6nry <henry.anonym@gmail.com>
+Depiction: http://h6nry.github.io/repo/Files/tapcounter/index.html
