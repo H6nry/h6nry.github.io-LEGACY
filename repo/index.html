@@ -13,15 +13,15 @@ if (!is_ios) document.getElementById('ocy').innerHTML = ' Most probably, you wil
 
 //The functionality for the package list.
 function Apt_package() {
-	this._Package;
-	this._Version;
-	this._Section;
-	this._Installed_Size;
-	this._Description;
-	this._Name;
-	this._Author;
-	this._Filename;
-	this._Depiction;
+	this.Package;
+	this.Version;
+	this.Section;
+	this.Installed_Size;
+	this.Description;
+	this.Name;
+	this.Author;
+	this.Filename;
+	this.Depiction;
 } //Constructor for Apt_package object.
 
 function parsePackage(string) { //TODO: Make sure no key is undefined
@@ -39,36 +39,38 @@ function parsePackage(string) { //TODO: Make sure no key is undefined
 
 		switch (key) {
 			case 'Package':
-				a_package._Package = value;
+				a_package.Package = value;
 				break;
 			case 'Version':
-				a_package._Version = value;
+				a_package.Version = value;
 				break;
 			case 'Section':
-				a_package._Section = value;
+				a_package.Section = value;
 				break;
 			case 'Installed-Size':
-				a_package._Installed_Size = value;
+				a_package.Installed_Size = value;
 				break;
 			case 'Description':
-				a_package._Description = value;
+				a_package.Description = value;
 				break;
 			case 'Name':
-				a_package._Name = value;
+				a_package.Name = value;
 				break;
 			case 'Author':
-				a_package._Author = value;
+				a_package.Author = value;
 				break;
 			case 'Filename':
-				a_package._Filename = value;
+				a_package.Filename = value;
 				break;
 			case 'Depiction':
-				a_package._Depiction = value;
+				a_package.Depiction = value;
 				break;
 			default:
 				break; //Unknown key.
 		}
 	}
+
+	if (a_package.Package == undefined) return undefined;
 
 	return a_package;
 }
@@ -76,16 +78,17 @@ function parsePackage(string) { //TODO: Make sure no key is undefined
 function parsePackages(parse) {
 	var depictions = {};
 	while (parse.indexOf('\r') >= 0) parse = parse.replace('\r', ''); //Remove all carriage returns, which should not be there, anyways.
-    
-    var packages = parse.split('\n\n');
+
+	var packages = parse.split('\n\n');
 
 	for (var c = 0; c < packages.length; ++c) {
 		var a_package = parsePackage(packages[c]);
-		if (typeof a_package == 'undefined') continue;
 
-		var pid = a_package._Package;
-		
-		if (depictions[pid] && (parseFloat(a_package._Version) >= parseFloat(depictions[pid]._Version))) { //Only keep the latest version.
+		if (a_package == undefined) continue;
+
+		var pid = a_package.Package;
+
+		if (depictions[pid] && (parseFloat(a_package.Version) >= parseFloat(depictions[pid].Version))) { //Only keep the latest version.
 			depictions[pid] = a_package;
 		} else if (depictions[pid] == undefined) { //Package not added yet, add.
 			depictions[pid] = a_package;
@@ -107,19 +110,19 @@ xhr.onreadystatechange = function() {
 
 	var depictionArray = parsePackages(xhr.responseText);
 	if (!depictionArray) return;
-	
+
 	for (key in depictionArray) {
 		var pack = depictionArray[key];
 
 		//The following code is very messy. You have been warned.
 		document.getElementById('samples').innerHTML = document.getElementById('samples').innerHTML +
-			'<a href="javascript:var e = document.getElementById(\'u_' + pack._Package + '\'); e.style.display = e.style.display= (e.style.display == \'block\' ? \'none\' : \'block\');">' +
-			pack._Name + ' (' + pack._Version + ')</a><br>' +
-			'<div id="u_' + pack._Package + '" style="display:none;">' +
-			'&nbsp;&nbsp;' + pack._Description + '<br>' +
-			(is_ios ? '&nbsp;&nbsp;<a href="' +  'cydia://url/https://cydia.saurik.com/api/share#?source=http://h6nry.github.io/repo/&package=' + pack._Package + '" target="_blank">Show in Cydia.</a><br>' : '') +
-			'&nbsp;&nbsp;<a href="' + pack._Depiction + '" target="_blank">Show more info.</a><br>' +
-			'&nbsp;&nbsp;<a href="' + pack._Filename + '" target="_blank">Download the .deb package.</a><br><br>' +
+			'<a href="javascript:var e = document.getElementById(\'u_' + pack.Package + '\'); e.style.display = e.style.display= (e.style.display == \'block\' ? \'none\' : \'block\');">' +
+			pack.Name + ' (' + pack.Version + ')</a><br>' +
+			'<div id="u_' + pack.Package + '" style="display:none;">' +
+			'&nbsp;&nbsp;' + pack.Description + '<br>' +
+			(is_ios ? '&nbsp;&nbsp;<a href="' +  'cydia://url/https://cydia.saurik.com/api/share#?source=http://h6nry.github.io/repo/&package=' + pack.Package + '" target="_blank">Show in Cydia.</a><br>' : '') +
+			'&nbsp;&nbsp;<a href="' + pack.Depiction + '" target="_blank">Show more info.</a><br>' +
+			'&nbsp;&nbsp;<a href="' + pack.Filename + '" target="_blank">Download the .deb package.</a><br><br>' +
 			'</div>';
 	}
 };
