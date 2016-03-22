@@ -21,19 +21,23 @@ header {
 nav {
   background-color: #77FFFF;
   float: left;
-  max-width: 500px;
+  max-width: 300px;
+  padding: 5px;
 }
 
 section {
   text-align: justify;
   background-color: #FFFFFF;
   font-size: 110%;
-  float: left top;
+  float: right top;
+  max-width: 750px;
   display: table-cell;
+  padding: 5px;
 }
 
 aside {
   background-color: #77FFFF;
   float: right;
   max-width: 300px;
+  padding: 5px;
 }

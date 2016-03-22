@@ -55,6 +55,7 @@ var template = '\
 </header> \
  \
 \
+ \
 <nav class="tp-dync"><br> \
 	<a href="/index.html">Home</a><br><br> \
 	<a href="/projects.html">Projects</a><br><br> \
@@ -63,6 +64,7 @@ var template = '\
 	<a href="/c-autoreleasepool.html">C-Autoreleasepool project</a><br><br> \
 	<a href="/surutcra.html">Surutcra - A Twitter client</a><br><br> \
 	<a href="/ncforward.html">NCForward - Forward your notifications</a><br><br> \
+    <a href="/common-theos-problems.html">A collection of common THEOS problems</a><br><br> \
 	<a href="http://github.com/H6nry/" target="_blank">Github</a><br><br> \
 </nav> \
 <aside class="tp-dync"> \
@@ -77,6 +79,7 @@ var template = '\
 <section class="tp-dync2"><br> \
 	' + content + ' \
 </section> \
+ \
 ';
 document.documentElement.innerHTML = template;
 
@@ -144,7 +147,7 @@ function updateFlake() { //This gets fired with every snowflake which reaches th
 function startAnimation() { //Here, we start our bad stuff.
 	var date = new Date();
 	var m = date.getMonth();
-	if (m == 10 || m == 11 || m == 0 || m == 1) {
+	if (m == 11 || m == 0) {
 		startWinter();
 
 		this.remove();
@@ -168,5 +171,3 @@ document.body.appendChild(tte);
 window.setTimeout(function () {
 	tte.style.transform = 'rotate(90deg)';
 }, 100);
-
-
