@@ -277,3 +277,18 @@ Description: Downgrade your apps. Well, at least try it.
 Name: Adowngrader
 Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/adowngrader/index.html
+
+Package: org.h6nry.tapcounter
+Version: 0.1-24
+Section: Tweaks
+Maintainer: H6nry <henry.anonym@gmail.com>
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm
+Filename: Files//tapcounter/org.h6nry.tapcounter_0.1-24_iphoneos-arm.deb
+Size: 8950
+Installed-Size: 544
+MD5sum: 678cdaf1c58c7b101537230f090e4e75
+Description: Count your taps!
+Name: Tapcounter
+Author: H6nry <henry.anonym@gmail.com>
+Depiction: http://h6nry.github.io/repo/Files/tapcounter/index.html
