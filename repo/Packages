@@ -307,3 +307,18 @@ Description: Downgrade your apps. Well, at least try it.
 Name: Adowngrader
 Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/adowngrader/index.html
+
+Package: org.h6nry.rsspeek
+Version: 1.0-rc1-1
+Section: Addons (NotificationCenter)
+Maintainer: H6nry <henry.anonym@gmail.com>
+Depends: firmware (>= 5.0), com.saurik.substrate.safemode, com.chpwn.weeloader
+Architecture: iphoneos-arm
+Filename: Files//rsspeek/org.h6nry.rsspeek_1.0-rc1-1_iphoneos-arm.deb
+Size: 73754
+Installed-Size: 576
+MD5sum: 2a58962bb1b92b700406072020cdfa14
+Description: An RSS client in your notification center that does not suck.
+Name: RSSPeek
+Author: H6nry <henry.anonym@gmail.com>
+Depiction: http://h6nry.github.io/repo/Files/rsspeek/index.html
