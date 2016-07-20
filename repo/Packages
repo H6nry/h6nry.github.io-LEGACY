@@ -322,3 +322,18 @@ Description: An RSS client in your notification center that does not suck.
 Name: RSSPeek
 Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/rsspeek/index.html
+
+Package: org.h6nry.dockplay
+Version: 1.0-23
+Section: Tweaks
+Maintainer: H6nry <henry.anonym@gmail.com>
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Filename: Files//dockplay/org.h6nry.dockplay_1.0-23_iphoneos-arm.deb
+Size: 8970
+Installed-Size: 168
+MD5sum: 195f2f96d39597d99e3a6ef760c1afcd
+Description: Swipe gestures on lockscreen's now playing album art.
+Name: Dockplay
+Author: H6nry <henry.anonym@gmail.com>
+Depiction: http://h6nry.github.io/repo/Files/dockplay/index.html
