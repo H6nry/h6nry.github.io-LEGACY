@@ -337,3 +337,18 @@ Description: Swipe gestures on lockscreen's now playing album art.
 Name: Dockplay
 Author: H6nry <henry.anonym@gmail.com>
 Depiction: http://h6nry.github.io/repo/Files/dockplay/index.html
+
+Package: org.h6nry.crossfade
+Version: 1.0-4
+Section: Tweaks
+Maintainer: H6nry <henry.anonym@gmail.com>
+Depends: mobilesubstrate
+Architecture: iphoneos-arm
+Filename: Files//crossfade/org.h6nry.crossfade_1.0-4_iphoneos-arm.deb
+Size: 13590
+Installed-Size: 208
+MD5sum: 414cc104486feb11095841d462dacdd5
+Description: Crossfade. In your music app.
+Name: crossfade
+Author: H6nry <henry.anonym@gmail.com>
+Depiction: http://h6nry.github.io/repo/Files/crossfade/index.html
